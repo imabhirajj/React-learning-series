@@ -1,15 +1,9 @@
-import { AuthContextProvider } from "./learning/Day04-UseContext/AuthContext";
-import { ThemeContextProvider } from "./learning/Day04-UseContext/ThemeContext";
-import Navbar from "./learning/Day04-UseContext/Navbar";
-import Dashboard from "./learning/Day04-UseContext/Dashboard";
+import { AuthContextProvider } from "./learning/Day05-UseReducer/AuthContext";
 
 function App() {
   return (
     <AuthContextProvider>
-      <ThemeContextProvider>
-        <Navbar />
-        <Dashboard />
-      </ThemeContextProvider>
+      <h1>App is rendering</h1>
     </AuthContextProvider>
   );
 }
