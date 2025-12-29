@@ -1,18 +1,27 @@
-import TaskInput from "./learning/Day06-Projects/components/TaskInput";
-import TaskList from "./learning/Day06-Projects/components/TaskList";
-import Timer from "./learning/Day06-Projects/components/Timer";
-import { useTasks } from "./learning/Day06-Projects/context/TaskContext";
+import Navbar from "./components/Day07/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-  const { state } = useTasks();
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <h1>Home Page</h1>
+    },
+    {
+      path: "/about",
+      element: <h1>About Page</h1>
+    },
+    {
+      path: "/contact",
+      element: <h1>Contact Page</h1>
+    }
+  ]);
 
   return (
     <div className="app">
-      <h1>Focus Task Dashboard</h1>
-
-      <Timer />
-      <TaskInput />
-      <TaskList tasks={state.tasks} />
+      <Navbar />
+      <RouterProvider router={router} />
     </div>
   );
 }
